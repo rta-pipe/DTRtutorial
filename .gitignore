@@ -1,0 +1,11 @@
+#Files
+conf.ini
+dtr_conf.ini
+
+
+#Folders
+dist/
+UNKNOWN.egg-info/
+build/
+
+#Patterns
