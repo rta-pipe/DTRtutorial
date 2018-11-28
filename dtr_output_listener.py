@@ -56,9 +56,9 @@ if __name__ == '__main__':
     for message in pubsub.listen():
         if message['type'] != 'subscribe' and message['type'] != 'unsubscribe':
 
-            print('\nNew message arrived! ({})'.format(message))# Message: {}".format(message))
+            print('\n\n New message arrived!!! ({})'.format(message['type']))
 
             decodedData = message['data'].decode("utf-8")
             dictData = literal_eval(decodedData)
-            histoData = dictData['last_data']['histogramValues']
+            #histoData = dictData['last_data']['histogramValues']
             print("Message payload: ", dictData)
