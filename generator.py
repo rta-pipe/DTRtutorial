@@ -74,8 +74,8 @@ def getMockData(mockDataPath, fileFormat='csv'):
 
 if __name__ == '__main__':
 
-    if len(sys.argv) < 2:
-        print("Please enter: \n - the path to the configuration file \n - mock file path")
+    if len(sys.argv) < 3:
+        print("Please enter: \n - the path to the configuration file \n - mock file path \n - the generator output channel")
         exit()
 
     a = [1, 3, 5]
@@ -85,6 +85,7 @@ if __name__ == '__main__':
 
     configFilePath = sys.argv[1]
     mockDataPath = sys.argv[2]
+    generatoroutputchannel = sys.argv[3]
 
     config = configparser.ConfigParser()
     config.read(configFilePath)
@@ -99,7 +100,7 @@ if __name__ == '__main__':
     mockData = getMockData(mockDataPath, 'csv')
     print("Example of data: ", mockData[0])
 
-    sendMockData(config, redisConn, mockData, config.get('General','outputchannel') )
+    sendMockData(config, redisConn, mockData, generatoroutputchannel )
 
 
     """
